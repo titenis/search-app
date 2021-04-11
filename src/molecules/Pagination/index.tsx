@@ -37,9 +37,9 @@ export const Pagination: FC<IPaginationProps> = ({ count, ...rest }) => {
     history.push({ search: changedParams.toString() });
   };
 
-  const handleRowsPerPageChange: ChangeEventHandler<
-    HTMLTextAreaElement | HTMLInputElement
-  > = ({ target: { value } }) => {
+  const handleRowsPerPageChange: ChangeEventHandler<HTMLInputElement> = ({
+    target: { value },
+  }) => {
     params.delete(SEARCH_PARAM_PAGE_KEY);
 
     const changedParams = changeSearchParams(

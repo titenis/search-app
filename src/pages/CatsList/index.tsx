@@ -13,10 +13,20 @@ import { usePagination } from 'hooks/usePagination';
 import { ICatBreed } from 'api/types';
 import { SortLabel } from 'molecules/SortLabel';
 import { useSort } from 'hooks/useSort';
+import { useSearch } from 'hooks/useSearch';
+import { Highlightable } from 'atoms/Highlightable';
+
+type SearchableBreed = Pick<ICatBreed, 'name' | 'origin' | 'temperament'>;
+type SortableBreed = SearchableBreed;
 
 const Component: FC<IWithCatBreedsProps> = ({ catBreeds }) => {
-  const sortedBreeds = useSort<ICatBreed>(catBreeds);
-  const paginatedBreeds = usePagination<ICatBreed>(sortedBreeds);
+  const searchedBreeds = useSearch<SearchableBreed>(catBreeds, [
+    'name',
+    'origin',
+    'temperament',
+  ]);
+  const sortedBreeds = useSort<SortableBreed>(searchedBreeds as ICatBreed[]);
+  const paginatedBreeds = usePagination<ICatBreed>(sortedBreeds as ICatBreed[]);
 
   return (
     <Paper>
@@ -42,11 +52,15 @@ const Component: FC<IWithCatBreedsProps> = ({ catBreeds }) => {
             {paginatedBreeds.map(row => (
               <TableRow key={row.id}>
                 <TableCell component="th" scope="row">
-                  {row.name}
+                  <Highlightable>{row.name}</Highlightable>
                 </TableCell>
-                <TableCell align="right">{row.origin}</TableCell>
+                <TableCell align="right">
+                  <Highlightable>{row.origin}</Highlightable>
+                </TableCell>
                 <TableCell align="right">{row.life_span}</TableCell>
-                <TableCell align="right">{row.temperament}</TableCell>
+                <TableCell align="right">
+                  <Highlightable>{row.temperament}</Highlightable>
+                </TableCell>
                 <TableCell align="right">{row.weight.metric}</TableCell>
                 <TableCell align="right">
                   <a target="_blank" href={row.wikipedia_url} rel="noreferrer">
@@ -58,7 +72,7 @@ const Component: FC<IWithCatBreedsProps> = ({ catBreeds }) => {
           </TableBody>
         </Table>
       </TableContainer>
-      <Pagination count={catBreeds.length} />
+      <Pagination count={sortedBreeds.length} />
     </Paper>
   );
 };
