@@ -1,6 +1,7 @@
 import { TablePagination, TablePaginationProps } from '@material-ui/core';
 import React, { FC, MouseEvent, ChangeEventHandler } from 'react';
 import { useLocation, useHistory } from 'react-router-dom';
+import { changeSearchParams } from 'utils/changeSearchParams';
 
 interface IPaginationProps extends Partial<TablePaginationProps> {
   count: number;
@@ -10,20 +11,6 @@ const SEARCH_PARAM_PAGE_KEY = 'page';
 const SEARCH_PARAM_ROWS_PER_PAGE_KEY = 'rows_per_page';
 const DEFAULT_PAGE = 0;
 const DEFAULT_ROWS_PER_PAGE = 5;
-
-export const changeSearchParams = (
-  params: URLSearchParams,
-  key: string,
-  value?: string,
-): URLSearchParams => {
-  if (value) {
-    params.set(key, value);
-  } else {
-    params.delete(key);
-  }
-
-  return params;
-};
 
 export const getRowsPerPage = (params: URLSearchParams): number =>
   Number(params.get(SEARCH_PARAM_ROWS_PER_PAGE_KEY)) || DEFAULT_ROWS_PER_PAGE;
