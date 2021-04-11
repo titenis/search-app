@@ -1,4 +1,5 @@
 import React, { Component, PropsWithChildren, ReactNode } from 'react';
+import Alert from '@material-ui/lab/Alert';
 
 interface IErrorBoundaryState {
   hasError: boolean;
@@ -22,7 +23,11 @@ export class ErrorBoundary extends Component<
     const { children } = this.props;
 
     if (hasError) {
-      return <>Theres been an error</>;
+      return (
+        <Alert severity="error">
+          Theres been an error. Please reload the page
+        </Alert>
+      );
     }
 
     return children;
