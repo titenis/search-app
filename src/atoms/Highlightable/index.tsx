@@ -8,8 +8,13 @@ export const Highlightable: FC = ({ children }) => {
   const params = new URLSearchParams(search);
   const searchValue = getSearchValue(params);
 
+  if (!children) {
+    return null;
+  }
+
   return (
     <Highlighter
+      data-testid="highlighter"
       searchWords={[searchValue ?? '']}
       autoEscape={true}
       textToHighlight={`${children}`}
