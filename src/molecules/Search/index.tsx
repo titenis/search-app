@@ -12,7 +12,6 @@ const SearchWrapper = styled('div')(({ theme }) => ({
   '&:hover': {
     backgroundColor: fade(theme.palette.common.white, 0.25),
   },
-  marginRight: theme.spacing(2),
   marginLeft: 0,
   width: '100%',
   [theme.breakpoints.up('sm')]: {
@@ -37,8 +36,9 @@ const StyledInput = styled(InputBase)(({ theme }) => ({
   width: '100%',
 }));
 
+const DEFAULT_SEARCH_VALUE = '';
 export const SEARCH_PARAM_SEARCH_KEY = 'search';
-export const getSearchValue = (params: URLSearchParams) =>
+export const getSearchValue = (params: URLSearchParams): string | null =>
   params.get(SEARCH_PARAM_SEARCH_KEY);
 
 export const Search: FC = () => {
@@ -63,7 +63,7 @@ export const Search: FC = () => {
       <StyledSearchIcon />
       <StyledInput
         onChange={handleChange}
-        value={searchValue ?? ''}
+        value={searchValue ?? DEFAULT_SEARCH_VALUE}
         placeholder="Search…"
       />
     </SearchWrapper>
