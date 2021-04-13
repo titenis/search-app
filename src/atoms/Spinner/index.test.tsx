@@ -1,11 +1,11 @@
 import React from 'react';
-import { render } from 'utils/testUtils';
+import { render, screen } from 'utils/testUtils';
 import { Spinner } from '.';
 
 describe('Spinner', () => {
   it('should render', () => {
-    const { container } = render(<Spinner />);
+    render(<Spinner />);
 
-    expect(container).toMatchSnapshot();
+    expect(screen.getByRole('progressbar')).toBeVisible();
   });
 });
