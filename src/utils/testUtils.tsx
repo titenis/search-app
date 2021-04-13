@@ -5,12 +5,26 @@ import { createMemoryHistory, History } from 'history';
 import { Router } from 'react-router-dom';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { theme } from 'theme';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
-export const Providers = (history: History): FC => ({ children }) => (
-  <Router history={history}>
-    <ThemeProvider theme={theme}>{children}</ThemeProvider>
-  </Router>
-);
+export const Providers = (history: History): FC => ({ children }) => {
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        retry: false,
+        cacheTime: 0,
+      },
+    },
+  });
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Router history={history}>
+        <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      </Router>
+    </QueryClientProvider>
+  );
+};
 
 export interface ICustomRenderOptions extends Omit<RenderOptions, 'queries'> {
   history?: History;

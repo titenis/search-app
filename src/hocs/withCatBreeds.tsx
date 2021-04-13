@@ -10,6 +10,8 @@ export interface IWithCatBreedsProps {
   catBreeds: ICatBreed[];
 }
 
+const DEFAULT_CAT_BREEDS: ICatBreed[] = [];
+
 export const withCatBreeds = <P extends unknown>(
   OriginalComponent: ComponentType<IWithCatBreedsProps & P>,
 ): ComponentType<P> => {
@@ -31,7 +33,12 @@ export const withCatBreeds = <P extends unknown>(
       );
     }
 
-    return <OriginalComponent {...props} catBreeds={data?.data ?? []} />;
+    return (
+      <OriginalComponent
+        {...props}
+        catBreeds={data?.data || DEFAULT_CAT_BREEDS}
+      />
+    );
   };
 
   Component.displayName = `WithCatBreeds(${
