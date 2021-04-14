@@ -1,6 +1,8 @@
 language: node_js
 node_js:
   - 12
+install:
+  - yarn --immutable
 script:
   - yarn lint
   - yarn typecheck
