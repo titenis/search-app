@@ -4,6 +4,7 @@ import { InputBase, styled } from '@material-ui/core';
 import { fade } from '@material-ui/core/styles';
 import { useHistory, useLocation } from 'react-router-dom';
 import { changeSearchParams } from 'utils/changeSearchParams';
+import { SEARCH_PARAM_PAGE_KEY } from 'molecules/Pagination';
 
 const SearchWrapper = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -50,6 +51,8 @@ export const Search: FC = () => {
   const handleChange: ChangeEventHandler<HTMLInputElement> = ({
     target: { value },
   }) => {
+    params.delete(SEARCH_PARAM_PAGE_KEY);
+
     const changedParams = changeSearchParams(
       params,
       SEARCH_PARAM_SEARCH_KEY,

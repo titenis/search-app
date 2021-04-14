@@ -1,4 +1,6 @@
-export const Abyssian = {
+import { ICatBreed } from 'api/types';
+
+export const Abyssian: ICatBreed = {
   weight: { imperial: '7  -  10', metric: '3 - 5' },
   id: 'abys',
   name: 'Abyssinian',
@@ -46,7 +48,7 @@ export const Abyssian = {
   },
 };
 
-export const Aegean = {
+export const Aegean: ICatBreed = {
   weight: { imperial: '7 - 10', metric: '3 - 5' },
   id: 'aege',
   name: 'Aegean',
@@ -90,7 +92,7 @@ export const Aegean = {
   },
 };
 
-export const AmericanBobtail = {
+export const AmericanBobtail: ICatBreed = {
   weight: { imperial: '7 - 16', metric: '3 - 7' },
   id: 'abob',
   name: 'American Bobtail',
@@ -138,7 +140,7 @@ export const AmericanBobtail = {
   },
 };
 
-export const AmericanCurl = {
+export const AmericanCurl: ICatBreed = {
   weight: { imperial: '5 - 10', metric: '2 - 5' },
   id: 'acur',
   name: 'American Curl',
@@ -187,7 +189,7 @@ export const AmericanCurl = {
   },
 };
 
-export const AmericanShorthair = {
+export const AmericanShorthair: ICatBreed = {
   weight: { imperial: '8 - 15', metric: '4 - 7' },
   id: 'asho',
   name: 'American Shorthair',
@@ -235,7 +237,7 @@ export const AmericanShorthair = {
   },
 };
 
-export const AmericanWirehair = {
+export const AmericanWirehair: ICatBreed = {
   weight: { imperial: '8 - 15', metric: '4 - 7' },
   id: 'awir',
   name: 'American Wirehair',

@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BreedHeadRow should render 1`] = `
+<div>
+  <table>
+    <thead>
+      <tr
+        class="MuiTableRow-root"
+      >
+        <td
+          class="MuiTableCell-root"
+        >
+          <span
+            aria-disabled="false"
+            class="MuiButtonBase-root MuiTableSortLabel-root"
+            role="button"
+            tabindex="0"
+          >
+            Name
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionAsc"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+              />
+            </svg>
+          </span>
+        </td>
+        <td
+          class="MuiTableCell-root MuiTableCell-alignRight"
+        >
+          <span
+            aria-disabled="false"
+            class="MuiButtonBase-root MuiTableSortLabel-root"
+            role="button"
+            tabindex="0"
+          >
+            Origin
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionAsc"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+              />
+            </svg>
+          </span>
+        </td>
+        <td
+          class="MuiTableCell-root MuiTableCell-alignRight"
+        >
+          Life span
+        </td>
+        <td
+          class="MuiTableCell-root MuiTableCell-alignRight"
+        >
+          <span
+            aria-disabled="false"
+            class="MuiButtonBase-root MuiTableSortLabel-root"
+            role="button"
+            tabindex="0"
+          >
+            Temperament
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionAsc"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+              />
+            </svg>
+          </span>
+        </td>
+        <td
+          class="MuiTableCell-root MuiTableCell-alignRight"
+        >
+          Weight (kg)
+        </td>
+        <td
+          class="MuiTableCell-root MuiTableCell-alignRight"
+        >
+          Wiki
+        </td>
+      </tr>
+    </thead>
+  </table>
+</div>
+`;

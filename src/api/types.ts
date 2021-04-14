@@ -17,7 +17,7 @@ export interface ICatBreed {
   adaptability: number;
   affection_level: number;
   alt_names: string;
-  cfa_url: string;
+  cfa_url?: string;
   child_friendly: number;
   country_code: string;
   country_codes: string;
@@ -32,7 +32,7 @@ export interface ICatBreed {
   image: ICatImage;
   indoor: number;
   intelligence: number;
-  lap: number;
+  lap?: number;
   life_span: string;
   natural: number;
   origin: string;
@@ -44,7 +44,7 @@ export interface ICatBreed {
   social_needs: number;
   stranger_friendly: number;
   suppressed_tail: number;
-  vcahospitals_url: string;
+  vcahospitals_url?: string;
   vetstreet_url: string;
   vocalisation: number;
   weight: ICatWeight;

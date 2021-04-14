@@ -7,7 +7,7 @@ interface IPaginationProps extends Partial<TablePaginationProps> {
   count: number;
 }
 
-const SEARCH_PARAM_PAGE_KEY = 'page';
+export const SEARCH_PARAM_PAGE_KEY = 'page';
 const SEARCH_PARAM_ROWS_PER_PAGE_KEY = 'rows_per_page';
 const DEFAULT_PAGE = 0;
 const DEFAULT_ROWS_PER_PAGE = 5;
