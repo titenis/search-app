@@ -1,4 +1,6 @@
 # Cat breeds search
+[![Build Status](https://travis-ci.com/titenis/search-app.svg?branch=main)](https://travis-ci.com/titenis/search-app)
+
 This repo is a small showcase of my current expertise in working with typescript and react based projects 
 
 ## Business logic
